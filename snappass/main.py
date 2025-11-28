@@ -10,9 +10,25 @@ from redis.exceptions import ConnectionError
 from urllib.parse import quote_plus
 from urllib.parse import unquote_plus
 from urllib.parse import urljoin
-from distutils.util import strtobool
 # _ is required to get the Jinja templates translated
 from flask_babel import Babel, _  # noqa: F401
+
+
+def strtobool (val):
+    """Convert a string representation of truth to true (1) or false (0).
+
+    True values are 'y', 'yes', 't', 'true', 'on', and '1'; false values
+    are 'n', 'no', 'f', 'false', 'off', and '0'.  Raises ValueError if
+    'val' is anything else.
+    """
+    val = val.lower()
+    if val in ('y', 'yes', 't', 'true', 'on', '1'):
+        return 1
+    elif val in ('n', 'no', 'f', 'false', 'off', '0'):
+        return 0
+    else:
+        raise ValueError("invalid truth value %r" % (val,))
+    
 
 NO_SSL = bool(strtobool(os.environ.get('NO_SSL', 'False')))
 URL_PREFIX = os.environ.get('URL_PREFIX', None)
