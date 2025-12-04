@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='snappass',
-    version='1.6.2',
+    version='1.6.3',
     description="It's like SnapChat... for Passwords.",
     long_description=(open('README.rst').read() + '\n\n' +
                       open('AUTHORS.rst').read()),
@@ -27,9 +27,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     zip_safe=False,
