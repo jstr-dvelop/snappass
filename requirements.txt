@@ -6,3 +6,4 @@ redis==7.0.1
 MarkupSafe==3.0.3
 Werkzeug==3.1.4
 flask-babel
+setuptools
